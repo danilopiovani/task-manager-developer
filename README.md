@@ -49,7 +49,7 @@ This is a full-stack To-Do application built with TypeScript, demonstrating the 
 1. Clone the repository:
    ```bash
    git clone https://github.com/danilopiovani/task-manager-developer.git
-   cd task-manager-backend
+   cd task-manager-developer
    ```
 
 ---

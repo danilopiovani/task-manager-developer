@@ -42,7 +42,10 @@ const TaskList = () => {
         <ListIcon size="lg" />
         <span>Task List</span>
       </div>
-     {taskList?.length === 0 ? (<div>No tasks found.</div>
+     {taskList?.length === 0 ? (
+        <div className={styles.empty}>
+          <h2>Welcome!</h2>
+          <p>It looks like you don’t have any tasks yet.</p></div>
       ) : (
         taskList?.map((task: TaskType) => (
           <Task key={task.id} task={task} />

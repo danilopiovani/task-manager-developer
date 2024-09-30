@@ -10,7 +10,9 @@ This is a full-stack Task List To-Do application built with TypeScript, demonstr
 - [Installation](#installation)
 - [Setup](#setup)
 - [Running the Application](#running-the-application)
+- [Running Tests](#running-tests)
 - [API Endpoints](#api-endpoints)
+- [Deployed and Publish Version](#deployed)
 - [Technologies Used](#technologies-used)
 - [License](#license)
 
@@ -64,8 +66,9 @@ This is a full-stack Task List To-Do application built with TypeScript, demonstr
    npm run start
    ```
 
-By default: 
+##### By default: 
 The server will be running on `http://localhost:3002`.
+
 The frontend will be running on `http://localhost:3000`.
 
 ---
@@ -77,35 +80,72 @@ Once both backend and frontend are set up, the full application will be accessib
 
 ---
 
+
+## Running tests
+```bash
+   npm run test
+```
+
+
 ## API Endpoints
 
 1. **GET /tasks**: Retrieve all tasks.
    ```bash
-   curl http://localhost:3002/tasks
-   ```
+    curl -X GET http://localhost:3002/tasks \
+    -H "Content-Type: application/json" \
+    -H "Origin: http://localhost:3000"
+    ```
 
-2. **GET /tasks/:id**: Retrieve a specific task by ID. (Should get error as task 1 do not exist)
+2. **GET /tasks/:id**: Retrieve a specific task by ID. (Should get error as task 1 do not exist).
    ```bash
-   curl http://localhost:3002/tasks/1
+   curl -X GET http://localhost:3002/tasks/1 \
+    -H "Content-Type: application/json" \
+    -H "Origin: http://localhost:3000"
    ```
 
 3. **POST /tasks**: Create a new task.
    ```bash
-   curl -X POST -H "Content-Type: application/json" -d '{"title": "New Task", "description": "This is a new task"}' http://localhost:3002/tasks
+   TASK_ID=$(curl -X POST http://localhost:3002/tasks \
+    -H "Content-Type: application/json" \
+    -H "Origin: http://localhost:3000" \
+    -d '{"title": "New Task", "description": "Task details here", "completed": false}' | jq -r '.id')
+
+    echo "Created Task ID: $TASK_ID"
    ```
 
 4. **PUT /tasks/:id**: Update a task's title and description.
    ```bash
-   curl -X PUT -H "Content-Type: application/json" -d '{"title": "Updated Task", "description": "This is an updated task", completed: false}' http://localhost:3002/tasks/1
+   curl -X PUT http://localhost:3002/tasks/$TASK_ID \
+    -H "Content-Type: application/json" \
+    -H "Origin: http://localhost:3000" \
+    -d '{"title": "Updated Task", "description": "This is an updated task", "completed": true}'
    ```
+   
 5. **GET /tasks/:id**: Retrieve a specific task by ID. (Should return the required task)
    ```bash
-   curl http://localhost:3002/tasks/1
+   curl -X GET http://localhost:3002/tasks/$TASK_ID \
+    -H "Content-Type: application/json" \
+    -H "Origin: http://localhost:3000"
    ```
+   
 5. **DELETE /tasks/:id**: Delete a task by ID.
    ```bash
-   curl -X DELETE http://localhost:3002/tasks/1
+   curl -X DELETE http://localhost:3002/tasks/$TASK_ID \
+    -H "Content-Type: application/json" \
+    -H "Origin: http://localhost:3000"
    ```
+  
+---
+
+## Deployed and Published Version
+The task manager application is now live and accessible at this - [link](https://task-manager-developer-frontend.onrender.com/). You can interact with the full functionality of the app without needing to install or set up any local environment.
+
+This deployed version includes all features of the task manager, allowing you to create, update, delete, and manage tasks seamlessly. Simply visit the [link](https://task-manager-developer-frontend.onrender.com/) to start managing your tasks effortlessly!
+
+If you prefer a local setup, the instructions are available in the previous sections. However, for those who want to quickly explore the application, feel free to dive right in!
+
+[Live version: ](https://task-manager-developer-frontend.onrender.com/)
+
 
 ---
 

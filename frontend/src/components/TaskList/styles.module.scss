@@ -19,6 +19,20 @@
         gap: 5px;
         padding: 30px;
     }
+    .empty{
+        width: 100%;
+        font-size: 1.2rem;
+        color: $gray;
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+    
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+    }
 
     .spacer {
         width: 100%;

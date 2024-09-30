@@ -7,8 +7,8 @@ jobs:
     name: Run FE test
     runs-on: ubuntu-latest
     environment: frontEnd
-    working-directory: frontend
     steps:
+      working-directory: frontend
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: install deps
@@ -21,8 +21,8 @@ jobs:
     # needs: [run-frontend-test]
     runs-on: ubuntu-latest
     environment: backend
-    working-directory: backend
     steps:
+      working-directory: backend
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: install deps

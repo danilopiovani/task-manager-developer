@@ -83,13 +83,19 @@ Once both backend and frontend are set up, the full application will be accessib
 
 ## Running tests
 
+To ensure the application functions correctly, run the unit and integration tests using the following command:
+
 ```bash
    npm run test
 ```
 
+This will execute all tests for both the backend and frontend, ensuring the API and user interface behave as expected.
+
 ---
 
 ## API Endpoints
+
+Note: Ensure the application is running before executing the following commands. The backend should be running at http://localhost:3002 and the frontend at http://localhost:3000.
 
 1. **GET /tasks**: Retrieve all tasks.
    ```bash

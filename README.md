@@ -12,7 +12,7 @@ This is a full-stack Task List To-Do application built with TypeScript, demonstr
 - [Running the Application](#running-the-application)
 - [Running Tests](#running-tests)
 - [API Endpoints](#api-endpoints)
-- [Deployed and Publish Version](#deployed-and-publish-version)
+- [Deployed and Published Version](#deployed-and-published-version)
 - [Technologies Used](#technologies-used)
 - [License](#license)
 
@@ -82,10 +82,12 @@ Once both backend and frontend are set up, the full application will be accessib
 
 
 ## Running tests
+
 ```bash
    npm run test
 ```
 
+---
 
 ## API Endpoints
 
@@ -138,13 +140,14 @@ Once both backend and frontend are set up, the full application will be accessib
 ---
 
 ## Deployed and Published Version
-The task manager application is now live and accessible at this - [link](https://task-manager-developer-frontend.onrender.com/). You can interact with the full functionality of the app without needing to install or set up any local environment.
 
-This deployed version includes all features of the task manager, allowing you to create, update, delete, and manage tasks seamlessly. Simply visit the [link](https://task-manager-developer-frontend.onrender.com/) to start managing your tasks effortlessly!
+The task manager application is now live and accessible. You can interact with the full functionality of the app without needing to install or set up any local environment.
+
+This deployed version includes all features of the task manager, allowing you to create, update, delete, and manage tasks seamlessly.
 
 If you prefer a local setup, the instructions are available in the previous sections. However, for those who want to quickly explore the application, feel free to dive right in!
 
-[Live version: ](https://task-manager-developer-frontend.onrender.com/)
+[Live version ](https://task-manager-developer-frontend.onrender.com/)
 
 
 ---

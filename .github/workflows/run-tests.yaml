@@ -6,26 +6,26 @@ jobs:
   run-frontend-test:
     name: Run FE test
     runs-on: ubuntu-latest
-    environment: frontEnd
     steps:
-      working-directory: frontend
       - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: install deps
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        working-directory: ./frontend
         run: npm install
-      - name: run tests
+      - name: Run tests
+        working-directory: ./frontend
         run: npm run test
 
   run-backend-test:
     name: Run BE test
-    # needs: [run-frontend-test]
+    needs: [run-frontend-test] # Uncomment if you want the backend test to wait for FE test
     runs-on: ubuntu-latest
-    environment: backend
     steps:
-      working-directory: backend
       - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: install deps
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        working-directory: ./backend
         run: npm install
-      - name: run tests
+      - name: Run tests
+        working-directory: ./backend
         run: npm run test

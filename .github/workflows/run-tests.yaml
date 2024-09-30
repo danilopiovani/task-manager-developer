@@ -18,7 +18,7 @@ jobs:
 
   run-backend-test:
     name: Run BE test
-    needs: [run-frontend-test] # Uncomment if you want the backend test to wait for FE test
+    needs: [run-frontend-test]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

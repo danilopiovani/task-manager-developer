@@ -1,0 +1,33 @@
+name: Run Tests
+
+on: push
+
+jobs:
+  run-frontend-test:
+    name: Run FE test
+    runs-on: ubuntu-latest
+    environment: frontEnd
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: navigate to FE
+        run: cd frontend/
+      - name: install deps
+        run: npm install
+      - name: run tests
+        run: npm run test
+
+  run-backend-test:
+    name: Run BE test
+    needs: [run-frontend-test]
+    runs-on: ubuntu-latest
+    environment: backend
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: navigate to BE
+        run: cd backend/
+      - name: install deps
+        run: npm install
+      - name: run tests
+        run: npm run test

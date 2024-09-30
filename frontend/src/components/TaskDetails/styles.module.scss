@@ -1,0 +1,101 @@
+@import '../../styles/main.scss';
+.taskDetails {
+  width: 100%;
+  height: 100%;
+  @include center-flex();
+  flex-direction: column;
+  position: relative;
+  
+  .breadcrumb{
+    width: 800px;
+    height: 60px;
+    position: sticky;
+    top:0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $white;
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .cardContainerEdit{
+    width: 798px;
+    height: 100%;
+  }
+  .cardContainer{
+    width: 798px;
+    height: 100%;
+    background-color: $white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    
+    .contentWrapper{
+      background-color: $light-gray;
+      .header {
+        img {
+          width: 100%;
+          height: 150px;
+          object-fit: cover;
+          border-bottom: 1px solid $light-gray;
+        }
+      }
+      .content{
+        .formContainer{
+          padding: 10px;
+        }
+        
+        .title, .titleWrong {
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: $darkGray;
+          padding: 5px 15px;
+          border-bottom: 1px solid $light-gray;
+          background-color: $hover-bg-color;
+          border-bottom-left-radius: 8px;
+          border-bottom-right-radius: 8px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          p{
+            width: 100%;
+          }
+          .btn{
+            cursor: pointer;
+            &:hover{
+              color: $secondary-color;
+              transform: scale(1.1);
+            }
+          }
+        }
+        .titleWrong{
+          font-size: 1.5rem;
+          background-color: $error-bg;
+          width: 100%;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          color: $error-color;
+          span{
+            color: $darkGray;
+            font-size: 1.1rem;
+          }
+        }
+        .description {
+          padding: 15px;
+          font-size: $font-size-base;
+          color: $darkGray;
+          line-height: 1.5;
+          background-color: $white;
+          text-align: justify;
+          white-space: pre-wrap;
+        }
+      }
+    }
+  }
+}

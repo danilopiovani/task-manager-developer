@@ -1,0 +1,17 @@
+@import '../../styles/main.scss';
+.content{
+    width: 100%;
+    max-width: 800px;
+    .breadcrumbs{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap:5px;
+        padding:10px 0;
+        span{
+            color: $gray;
+        }
+    }
+}

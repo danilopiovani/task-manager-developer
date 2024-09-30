@@ -1,0 +1,66 @@
+@import '../../styles/main.scss';
+
+.taskItem{
+    width: 100%;
+    padding: 20px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
+                0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap:10px;
+
+    &:hover {
+        background-color: $hover-bg-color;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15), 
+                    0 4px 6px rgba(0, 0, 0, 0.12);
+    }
+    .itemInfoContainer{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      .checkbox{
+        @include center-flex();
+        flex-direction: column;
+        input[type="checkbox"]{
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+        }
+      }
+      .itemInfo{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        cursor: pointer;
+        .title{
+          font-size: 1.2rem;
+          color: $primary-color;
+          &.completed{
+            text-decoration: line-through;
+            color: $gray;
+          }
+        }
+        .description{
+          text-align: justify;
+          &.completed{
+            color: $gray;
+          }
+        }
+      }
+    }
+    
+    .actionBtn{
+      color: $gray;
+      cursor: pointer;
+      &:hover{
+        color: $error-color;
+        transform: scale(1.1);
+      }
+    }
+}

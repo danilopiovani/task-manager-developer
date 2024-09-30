@@ -1,0 +1,13 @@
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npx kill-port 3002 && npm run dev --prefix backend\" \"npx kill-port 3000 && npm run start --prefix frontend\"",
+    "install-all": "npm install --prefix backend && npm install --prefix frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "kill-port": "^1.6.1"
+  }
+}

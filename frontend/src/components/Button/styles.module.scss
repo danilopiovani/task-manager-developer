@@ -1,0 +1,4 @@
+@import '../../styles/main.scss';
+.btn{
+  @include button-style($primary-color, $white);
+}

@@ -7,11 +7,10 @@ jobs:
     name: Run FE test
     runs-on: ubuntu-latest
     environment: frontEnd
+    working-directory: frontend
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: navigate to FE
-        run: cd frontend/
       - name: install deps
         run: npm install
       - name: run tests
@@ -19,14 +18,13 @@ jobs:
 
   run-backend-test:
     name: Run BE test
-    needs: [run-frontend-test]
+    # needs: [run-frontend-test]
     runs-on: ubuntu-latest
     environment: backend
+    working-directory: backend
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: navigate to BE
-        run: cd backend/
       - name: install deps
         run: npm install
       - name: run tests

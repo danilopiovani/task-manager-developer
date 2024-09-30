@@ -1,5 +1,5 @@
 
-# Task List To-Do Application
+# To-Do Application
 
 This is a full-stack To-Do application built with TypeScript, demonstrating the implementation of CRUD operations on both the backend and frontend. The app includes a RESTful API for managing tasks and a React frontend for displaying and interacting with tasks.
 

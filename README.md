@@ -12,7 +12,7 @@ This is a full-stack Task List To-Do application built with TypeScript, demonstr
 - [Running the Application](#running-the-application)
 - [Running Tests](#running-tests)
 - [API Endpoints](#api-endpoints)
-- [Deployed and Publish Version](#deployed)
+- [Deployed and Publish Version](#deployed-and-publish-version)
 - [Technologies Used](#technologies-used)
 - [License](#license)
 

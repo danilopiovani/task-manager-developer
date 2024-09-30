@@ -10,8 +10,8 @@ import { toast } from 'react-toastify'
 
 const TaskList = () => {
   const [taskList, setTaskList] = useState<TaskType[]>([])
-  const tasks = useTaskStore((state) => state.tasks);
-  const loadTasks = useTaskStore((state) => state.loadTasks);
+  const tasks = useTaskStore((state: { tasks: TaskType[] }) => state.tasks);
+  const loadTasks = useTaskStore((state: { loadTasks: (tasks: TaskType[]) => void }) => state.loadTasks);
   const { data, error, fetchData } = useFetch<TaskType[]>();
   const [fetchAttempted, setFetchAttempted] = useState<boolean>(false);
 
@@ -21,9 +21,7 @@ const TaskList = () => {
       setFetchAttempted(true);
       setTaskList(tasks);
     } else {
-      if (tasks?.length > 0) {
         setTaskList(tasks);
-      }
     }
   }, [tasks, fetchData, fetchAttempted]);
 

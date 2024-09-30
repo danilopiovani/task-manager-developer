@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "concurrently \"npx kill-port 3002 && npm run dev --prefix backend\" \"npx kill-port 3000 && npm run start --prefix frontend\"",
-    "install-all": "npm install --prefix backend && npm install --prefix frontend"
+    "install-all": "npm install --prefix backend && npm install --prefix frontend && npm install --prefix",
+    "test": "npm run test --prefix backend && npm run test --prefix frontend"
   },
   "devDependencies": {
     "concurrently": "^7.0.0",

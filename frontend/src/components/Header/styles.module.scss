@@ -25,3 +25,16 @@
         }
     }
 }
+
+@include respond-to(mobile) {
+    .header{
+        height: auto;
+        padding: 15px;
+
+        div {
+            .title, .subTitle {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

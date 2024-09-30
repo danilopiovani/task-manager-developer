@@ -11,69 +11,69 @@ app.use(cors);
 
 app.use(express.json());
 
-// let tasks: Task[] = [];  
-let tasks: Task[] = [
-    {
-      id: '1',
-      title: 'Grocery Shopping',
-      description: 'Buy ingredients for dinner: chicken, broccoli, olive oil, and pasta.',
-      completed: false
-    },
-    {
-      id: '2',
-      title: 'Team Meeting Preparation',
-      description: 'Prepare slides for the quarterly review, including project status and next steps.',
-      completed: false
-    },
-    {
-      id: '3',
-      title: 'Client Follow-up',
-      description: 'Email client with project update and confirm next meeting date.',
-      completed: true
-    },
-    {
-      id: '4',
-      title: 'Doctor Appointment',
-      description: 'Schedule annual check-up with Dr. Johnson and request bloodwork report.',
-      completed: false
-    },
-    {
-      id: '5',
-      title: 'Car Maintenance',
-      description: 'Take the car to the mechanic for an oil change and tire rotation.',
-      completed: true
-    },
-    {
-      id: '6',
-      title: 'Finalize Budget Proposal',
-      description: 'Complete the final version of the 2024 budget and submit for approval.',
-      completed: false
-    },
-    {
-      id: '7',
-      title: 'Clean Garage',
-      description: 'Organize tools, sweep the floor, and dispose of old paint cans.',
-      completed: false
-    },
-    {
-      id: '8',
-      title: 'Plan Weekend Getaway',
-      description: 'Book a hotel for the trip, research nearby hiking trails, and pack essentials.',
-      completed: false
-    },
-    {
-      id: '9',
-      title: 'Write Blog Post',
-      description: 'Draft a blog post on productivity tips for remote workers and review for edits.',
-      completed: true
-    },
-    {
-      id: '10',
-      title: 'Submit Expense Report',
-      description: 'Collect receipts and submit the expense report for the last business trip.',
-      completed: false
-    }
-  ];
+let tasks: Task[] = [];  
+// let tasks: Task[] = [
+//     {
+//       id: '1',
+//       title: 'Grocery Shopping',
+//       description: 'Buy ingredients for dinner: chicken, broccoli, olive oil, and pasta.',
+//       completed: false
+//     },
+//     {
+//       id: '2',
+//       title: 'Team Meeting Preparation',
+//       description: 'Prepare slides for the quarterly review, including project status and next steps.',
+//       completed: false
+//     },
+//     {
+//       id: '3',
+//       title: 'Client Follow-up',
+//       description: 'Email client with project update and confirm next meeting date.',
+//       completed: true
+//     },
+//     {
+//       id: '4',
+//       title: 'Doctor Appointment',
+//       description: 'Schedule annual check-up with Dr. Johnson and request bloodwork report.',
+//       completed: false
+//     },
+//     {
+//       id: '5',
+//       title: 'Car Maintenance',
+//       description: 'Take the car to the mechanic for an oil change and tire rotation.',
+//       completed: true
+//     },
+//     {
+//       id: '6',
+//       title: 'Finalize Budget Proposal',
+//       description: 'Complete the final version of the 2024 budget and submit for approval.',
+//       completed: false
+//     },
+//     {
+//       id: '7',
+//       title: 'Clean Garage',
+//       description: 'Organize tools, sweep the floor, and dispose of old paint cans.',
+//       completed: false
+//     },
+//     {
+//       id: '8',
+//       title: 'Plan Weekend Getaway',
+//       description: 'Book a hotel for the trip, research nearby hiking trails, and pack essentials.',
+//       completed: false
+//     },
+//     {
+//       id: '9',
+//       title: 'Write Blog Post',
+//       description: 'Draft a blog post on productivity tips for remote workers and review for edits.',
+//       completed: true
+//     },
+//     {
+//       id: '10',
+//       title: 'Submit Expense Report',
+//       description: 'Collect receipts and submit the expense report for the last business trip.',
+//       completed: false
+//     }
+// ];
   
 
 app.get('/', (req: Request, res: Response) => {

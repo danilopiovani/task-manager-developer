@@ -16,8 +16,8 @@ interface TaskProps {
 const Task = ({ task }: TaskProps) => {
   const { data, error, deleteData, mutateData } = useFetch<TaskType>();
   const navigate = useNavigate();
-  const updateTask = useTaskStore((state) => state.updateTask);
-  const deleteTask = useTaskStore((state) => state.deleteTask);
+  const updateTask = useTaskStore((state: { updateTask: (id: string, task: Partial<TaskType>) => void }) => state.updateTask);
+  const deleteTask = useTaskStore((state: { deleteTask: (id: string) => void }) => state.deleteTask);
 
   useEffect(() => {
     if (data) {

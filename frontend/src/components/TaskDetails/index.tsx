@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 const TaskDetails = () => {
   const { id } = useParams<{ id: string }>();
   const { data, error, fetchData, mutateData } = useFetch<TaskType>();
-  const task = useTaskStore((state) => state.tasks.find((task: TaskType) => task.id === id));
+  const task = useTaskStore((state: { tasks: TaskType[] }) => state.tasks.find((task: TaskType) => task.id === id));
   const [currentTask, setCurrentTask] = useState<TaskType | undefined>(task);
   const [title, setTitle] = useState<string>(currentTask?.title || '');
   const [description, setDescription] = useState<string>(currentTask?.description || '');

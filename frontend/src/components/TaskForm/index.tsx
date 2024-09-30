@@ -21,8 +21,8 @@ const TaskForm = (Props: Props) => {
   const insertButtonRef = useRef<HTMLButtonElement>(null);
   const { task, action = 'add', callback } = Props;
   const { data, error, mutateData } = useFetch<TaskType>();
-  const addTask = useTaskStore((state) => state.addTask);
-  const updateTask = useTaskStore((state) => state.updateTask);
+  const addTask = useTaskStore((state: { addTask: (task: TaskType) => void }) => state.addTask);
+  const updateTask = useTaskStore((state: { updateTask: (id: string, task: TaskType) => void }) => state.updateTask);
   const [title, setTitle] = useState<string>(task?.title || '');
   const [description, setDescription] = useState<string>(task?.description || '');
   const [formError, setFormError] = useState<{title: boolean, description: boolean}>({title: false, description: false});

@@ -9,7 +9,7 @@ interface TaskStore {
     deleteTask: (taskId: string) => void;
 }
 
-export const useTaskStore = create<TaskStore>((set) => ({
+export const useTaskStore = create<TaskStore>((set: (partial: Partial<TaskStore> | ((state: TaskStore) => Partial<TaskStore>)) => void) => ({
     // tasks: [
     //   {
     //     id: '1',
@@ -73,15 +73,15 @@ export const useTaskStore = create<TaskStore>((set) => ({
     //   }
     // ],
     tasks: [],
-    loadTasks: (tasks) => set((state) => ({ tasks: tasks })),
-    addTask: (task) => set((state) => ({ tasks: [...state.tasks, task] })),
-    updateTask: (taskId, updatedTask) =>
+    loadTasks: (tasks: TaskType[]) => set((state) => ({ tasks: tasks })),
+    addTask: (task: TaskType) => set((state) => ({ tasks: [...state.tasks, task] })),
+    updateTask: (taskId: string, updatedTask: Partial<TaskType>) =>
         set((state) => ({
             tasks: state.tasks.map((task) =>
                 task.id === taskId ? { ...task, ...updatedTask } : task
             ),
         })),
-    deleteTask: (taskId) =>
+    deleteTask: (taskId: string) =>
         set((state) => ({
             tasks: state.tasks.filter((task) => task.id !== taskId),
         })),

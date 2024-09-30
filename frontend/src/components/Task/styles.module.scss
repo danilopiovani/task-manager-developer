@@ -64,3 +64,16 @@
       }
     }
 }
+@include respond-to(mobile) {
+  .taskItem{
+    padding: 10px 15px;
+
+    .itemInfoContainer {
+      gap: 10px;
+
+      .checkbox {
+        align-items: flex-start;
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001'];
+const allowedOrigins = process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS?.split(',') : ['http://localhost:3000', 'http://localhost:3001'];
 const cors = (req: Request, res: Response, next: NextFunction): void => {
     const origin = req.headers.origin;
     if (allowedOrigins.includes(origin as string)) {
